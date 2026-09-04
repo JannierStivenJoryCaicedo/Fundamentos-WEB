@@ -1,0 +1,26 @@
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.encabezado {
+    border: 2px solid red;
+    height: 50px;
+    padding: 5px;
+    margin-bottom: 10px;
+    background-color: chartreuse;
+}
+
+.cuerpo {
+    border: 2px solid red;
+    height: 500px;
+    padding: 5px;
+    margin-bottom: 10px;
+    back
+}
+
+.piePagina {
+    border: 2px solid red;
+    height: 50px;
+    padding: 5px;
+    margin-bottom: 10px;
+}
