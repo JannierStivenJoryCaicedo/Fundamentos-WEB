@@ -15,7 +15,7 @@ body {
     height: 500px;
     padding: 5px;
     margin-bottom: 10px;
-    back
+    background-color: chartreuse;
 }
 
 .piePagina {
@@ -23,4 +23,5 @@ body {
     height: 50px;
     padding: 5px;
     margin-bottom: 10px;
+    background-color: chartreuse;
 }
