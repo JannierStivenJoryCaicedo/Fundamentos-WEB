@@ -44,3 +44,34 @@ footer {
     margin: 5px;
     width: 47%;
 }
+
+#sec_contenido {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+#secCon_article1 {
+    border: 1px solid rgb(162, 244, 40);
+    background-color: rgb(238, 9, 62);
+    height: 80px;
+    margin: 5px;
+    width: 47%;
+}
+
+#secCon_article2 {
+    border: 1px solid rgb(221, 85, 18);
+    background-color: rgb(81, 150, 206);
+    height: 80px;
+    margin: 5px;
+    width: 47%;
+}
+
+#secCon_article3 {
+    border: 1px solid rgb(116, 109, 134);
+    background-color: rgb(81, 150, 206);
+    height: 80px;
+    margin: 5px;
+    width: 47%;
+}
