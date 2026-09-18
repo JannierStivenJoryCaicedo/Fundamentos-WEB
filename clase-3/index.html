@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StudentFlow Wireframe</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <style>
+    .sidebar-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      padding: 18px 14px;
+    }
+
+    .sidebar-nav-link {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 14px;
+      border-radius: 14px;
+      color: #111827;
+      text-decoration: none;
+      font-size: 1.08rem;
+      font-weight: 500;
+    }
+
+    .sidebar-nav-link:hover {
+      background: #f3f5f8;
+    }
+
+    .sidebar-nav-icon {
+      display: inline-grid;
+      place-items: center;
+      width: 24px;
+      font-size: 1.15rem;
+    }
+
+    .sidebar-nav-link.is-active {
+      background: linear-gradient(180deg, #f1f3f5 0%, #eceff3 100%);
+      box-shadow: inset 0 0 0 1px rgba(17, 24, 39, 0.04);
+    }
+
+    .sidebar-brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-height: 92px;
+      padding: 16px 18px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .sidebar-brand-logo {
+      width: 48px;
+      height: 48px;
+      object-fit: contain;
+      border: 1px solid #d8dee9;
+      border-radius: 12px;
+      background: #ffffff;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="wireframe-shell">
+    <aside class="wireframe-sidebar" aria-label="Barra lateral">
+      <div class="sidebar-brand">
+        <img src="./image.png" alt="">
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="#" class="sidebar-nav-link is-active>
+          <span class=" sidebar-nav-icon" aria-hidden="true">⌂</span>
+          <span>Dashboard</span>
+        </a>
+        <a href="#" class="sidebar-nav-link">
+          <span class="sidebar-nav-icon" aria-hidden="true">📖</span>
+          <span>Materias</span>
+        </a>
+        <a href="#" class="sidebar-nav-link">
+          <span class="sidebar-nav-icon" aria-hidden="true">🗒</span>
+          <span>Tareas</span>
+        </a>
+        <a href="#" class="sidebar-nav-link">
+          <span class="sidebar-nav-icon" aria-hidden="true">🗓</span>
+          <span>Calendario</span>
+        </a>
+        <a href="#" class="sidebar-nav-link">
+          <span class="sidebar-nav-icon" aria-hidden="true">⏱</span>
+          <span>Pomodoro</span>
+        </a>
+        <a href="#" class="sidebar-nav-link">
+          <span class="sidebar-nav-icon" aria-hidden="true">📊</span>
+          <span>Estadísticas</span>
+        </a>
+        <a href="#" class="sidebar-nav-link">
+          <span class="sidebar-nav-icon" aria-hidden="true">⚙</span>
+          <span>Ajustes</span>
+        </a>
+      </nav>
+    </aside>
+
+    <section class="wireframe-main">
+      <header class="wireframe-header" aria-label="Encabezado">
+
+      </header>
+
+      <section class="wireframe-content" aria-label="Contenido principal">
+
+      </section>
+    </section>
+  </main>
+</body>
+
+</html>
