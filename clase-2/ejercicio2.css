@@ -3,19 +3,19 @@ body {
     min-height: calc(100vh - 56px);
 }
 
-.encabezado {
+header {
     border: 2px solid red;
     padding: 5px;
     margin-bottom: 10px;
 }
 
-.cuerpo {
+main {
     border: 2px solid red;
     padding: 5px;
     margin-bottom: 10px;
 }
 
-.piePagina {
+footer {
     border: 2px solid red;
     padding: 5px;
     margin-bottom: 10px;

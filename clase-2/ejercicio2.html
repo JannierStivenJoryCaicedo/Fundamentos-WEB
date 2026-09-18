@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio 1</title>
-    <link rel="stylesheet" href="ejercicio1.css">
+    <title>Ejercicio 2</title>
+    <link rel="stylesheet" href="ejercicio2.css">
     <style>
-        .opcion {
+        nav {
             background-color: white;
             display: flex;
             flex-direction: row;
@@ -17,7 +17,7 @@
             padding: 5px;
         }
 
-        button {
+        div {
             background-color: yellow;
             border: 1px solid black;
             height: 25px;
@@ -27,21 +27,21 @@
 </head>
 
 <body>
-    <!--Pagina con html no semantico-->
-    <div class="encabezado">
+    <!--Pagina con html semantico-->
+    <Header>
         <section id="sec_encabezado">
             <article id="secEnc_article1">articulo1</article>
             <article id="secEnc_article2">articulo2</article>
         </section>
-    </div>
-    <div class="cuerpo">
-        <div class="opcion">
-            <button>opcion 1</button>
-            <button>opcion 2</button>
-            <button>opcion 3</button>
-            <button>opcion 4</button>
-            <button>opcion 5</button>
-        </div>
+    </Header>
+    <main>
+        <Nav>
+            <div>opcion 1</div>
+            <div>opcion 2</div>
+            <div>opcion 3</div>
+            <div>opcion 4</div>
+            <div>opcion 5</div>
+        </Nav>
         <section id="sec_cuerpo">
             <article id="secCuerpo_article1">articulo1</article>
             <article id="secCuerpo_article2">articulo2</article>
@@ -51,16 +51,13 @@
             <article id="secCuerpo_article4">articulo4</article>
             <article id="secCuerpo_article5">articulo5</article>
         </section>
-    </div>
-    <div class="piePagina">
+    </main>
+    <Footer>
         <section id="sec_piePagina">
             <article id="secPie_article1">articulo1</article>
             <article id="secPie_article2">articulo2</article>
         </section>
-    </div>
+    </Footer>
 </body>
 
 </html>
-<script>
-
-</script>
