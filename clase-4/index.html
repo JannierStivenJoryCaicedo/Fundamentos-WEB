@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StudentFlow Wireframe</title>
+  <link rel="stylesheet" href="./css/styles.css" />
+  <link rel="stylesheet" href="./css/sidebar1.css">
+
+</head>
+
+<body>
+  <main class="wireframe-shell">
+    <aside class="wireframe-sidebar" aria-label="Barra lateral">
+      <div class="sidebar-brand">
+        <img src="./image.png" alt="">
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="#" class="sidebar-nav-link">
+          <span class=" sidebar-nav-icon" aria-hidden="true">⌂</span>
+          <span>Dashboard</span>
+        </a>
+        <a href="#" class="sidebar-nav-link is-active">
+          <span class="sidebar-nav-icon" aria-hidden="true">📖</span>
+          <span>Materias</span>
+        </a>
+        <a href="#" class="sidebar-nav-link">
+          <span class="sidebar-nav-icon" aria-hidden="true">🗒</span>
+          <span>Tareas</span>
+        </a>
+        <a href="#" class="sidebar-nav-link">
+          <span class="sidebar-nav-icon" aria-hidden="true">🗓</span>
+          <span>Calendario</span>
+        </a>
+        <a href="#" class="sidebar-nav-link">
+          <span class="sidebar-nav-icon" aria-hidden="true">⏱</span>
+          <span>Pomodoro</span>
+        </a>
+        <a href="#" class="sidebar-nav-link">
+          <span class="sidebar-nav-icon" aria-hidden="true">📊</span>
+          <span>Estadísticas</span>
+        </a>
+        <a href="#" class="sidebar-nav-link">
+          <span class="sidebar-nav-icon" aria-hidden="true">⚙</span>
+          <span>Ajustes</span>
+        </a>
+      </nav>
+    </aside>
+
+    <section class="wireframe-main">
+      <header class="wireframe-header" aria-label="Encabezado">
+        <h1>Encabezado</h1>
+      </header>
+
+      <section class="wireframe-content" aria-label="Contenido principal">
+        <h1>Contenido</h1>
+        <div id="Materias-Component-slot" aria-label="Espacio del componente de materias"></div>
+      </section>
+    </section>
+  </main>
+</body>
+
+</html>
+<script>
+  const MateriasComponentslot = document.getElementById("Materias-Component-slot");
+
+  async function loadMateriasComponent() {
+    try {
+      const response = await fetch("./componentes/materias-form.html");
+
+      if (!response.ok) {
+        throw new error("No fue posible cargar el componente materias.   ");
+      }
+
+      MateriasComponentslot.innerHTML = await response.text();
+    } catch (error) {
+      console.error(error);
+      MateriasComponentslot.innerHTML = "<p> No se pudo cargar el componente de materias </p>"
+    }
+  }
+
+  loadMateriasComponent();
+</script>
