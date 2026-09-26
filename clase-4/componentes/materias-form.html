@@ -1,5 +1,42 @@
-<form>
-    <input type="text" name="nombre" id="nombre">
-    <input type="color" name="color" id="color">
-    <button type="button">Guardar</button>
+<form class="materia-form-section">
+    <div class="materia-form-section-header">
+        <div class="materia-form-section-copy">
+            <h1>Materias</h1>
+            <p>Organiza tus asignaturas y asignales un color.</p>
+        </div>
+        <button type="button" class="materia-form-new-button">
+            + Nueva materia
+        </button>
+    </div>
+
+    <div class="materia-form-card">
+        <div class="materia-form-card-header">
+            <h2>Nueva materia</h2>
+        </div>
+        <div class="materia-form-card-body">
+            <div class="materia-form-row">
+                <div class="materia-field">
+                    <span>Nombre de la materia</span>
+                    <input type="text" placeholder="Ej: Algoritmos">
+                </div>
+                <div class="materia-field">
+                    <span>Codigo</span>
+                    <input type="text" placeholder="Ej: ALG-101">
+                </div>
+                <div class="materia-field">
+                    <span>Color identificador</span>
+                    <div class="materia-color-group">
+                        <input type="color" value="#7c3aed">
+                        <select>
+                            <option value="#7c3aed">#7C3AED</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="materia-form-actions">
+                    <button type="button" class="materia-save-button">Guardar</button>
+                    <button type="button" class="materia-cancel-button">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </form>
