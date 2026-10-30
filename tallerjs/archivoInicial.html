@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Control - Tienda Intergaláctica</title>
+    <style>
+        :root {
+            --space-dark: #0b0c10;
+            --space-light: #1f2833;
+            --cyber-cyan: #66fcf1;
+            --cyber-green: #45a29e;
+            --text-white: #c5c6c7;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--space-dark);
+            color: var(--text-white);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid var(--cyber-cyan);
+            padding-bottom: 10px;
+            width: 100%;
+            max-width: 800px;
+        }
+
+        h1 {
+            color: var(--cyber-cyan);
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        main {
+            width: 100%;
+            max-width: 800px;
+            background-color: var(--space-light);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(102, 252, 241, 0.2);
+        }
+
+        .section {
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(197, 198, 199, 0.1);
+        }
+
+        h2 {
+            color: var(--cyber-cyan);
+            font-size: 1.2rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .card {
+            background-color: var(--space-dark);
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px solid var(--cyber-green);
+        }
+
+        .card p {
+            margin: 5px 0;
+        }
+
+        .btn {
+            background-color: var(--cyber-cyan);
+            color: var(--space-dark);
+            border: none;
+            padding: 10px 15px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin-top: 10px;
+            width: 100%;
+        }
+
+        .btn:hover {
+            background-color: var(--cyber-green);
+            color: white;
+        }
+
+        .console-box {
+            background-color: black;
+            color: #39ff14;
+            font-family: 'Courier New', Courier, monospace;
+            padding: 15px;
+            border-radius: 4px;
+            height: 120px;
+            overflow-y: auto;
+            border: 1px solid #39ff14;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>🚀 Panel de Control Intergaláctico</h1>
+        <p>Prototipo Beta para el entrenamiento de Cadetes de Programación</p>
+    </header>
+
+    <main>
+        <!-- MÓDULO 1 y 3: Vista de Inventario -->
+        <div class="section">
+            <h2>📦 Inventario de la Nave (Clases y Arrays)</h2>
+            <div class="grid" id="contenedor-productos">
+                <!-- Los productos se cargarán dinámicamente con JavaScript -->
+            </div>
+        </div>
+
+        <!-- MÓDULO 2 y 4: Caja Registradora -->
+        <div class="section">
+            <h2>💳 Terminal de Simulación de Ventas (Condicionales y Funciones)</h2>
+            <p>Selecciona una acción rápida para probar los sistemas automáticos:</p>
+            <div class="grid">
+                <button class="btn" onclick="simularVenta('Cristales de Litio', 2)">Comprar 2 Cristales de
+                    Litio</button>
+                <button class="btn" onclick="simularVenta('Raciones de Plasma', 6)">Comprar 6 Raciones (¡Aplica
+                    Descuento!)</button>
+            </div>
+        </div>
+
+        <!-- Consola de Salida del Sistema -->
+        <div class="section">
+            <h2>🖥️ Bitácora del Sistema (Consola Web)</h2>
+            <div class="console-box" id="consola-web">
+                [SISTEMA ONLINE]: Esperando instrucciones de compra...<br>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // --- EJEMPLO MÓDULO 5: CLASES Y OBJETOS ---
+        class ProductoEspacial {
+            constructor(nombre, precio, stock, exportable) {
+                this.nombre = nombre;
+                this.precio = precio;
+                this.stock = stock;
+                this.exportable = exportable;
+            }
+
+            // Método para vender unidades
+            vender(cantidad) {
+                // --- EJEMPLO MÓDULO 2: CONDICIONALES ---
+                if (this.stock >= cantidad) {
+                    // --- EJEMPLO MÓDULO 4: FUNCIONES (Lógica integrada) ---
+                    let total = this.calcularTotal(cantidad);
+                    this.stock -= cantidad;
+
+                    imprimirEnConsola(`VENTA EXITOSA: Se vendieron ${cantidad} unidades de ${this.nombre}. Total: ${total} créditos. Stock restante: ${this.stock}`);
+                    actualizarInterfaz();
+                } else {
+                    imprimirEnConsola(`❌ ERROR: No hay suficiente stock de ${this.nombre}. Solicitado: ${cantidad}, Disponible: ${this.stock}`);
+                }
+            }
+
+            calcularTotal(cantidad) {
+                let totalBruto = this.precio * cantidad;
+                // Descuento del 10% si lleva más de 5 unidades
+                if (cantidad > 5) {
+                    totalBruto = totalBruto * 0.9;
+                }
+                return totalBruto;
+            }
+        }
+
+        // --- EJEMPLO MÓDULO 3: ARRAYS Y BUCLES ---
+        const inventario = [
+            new ProductoEspacial("Cristales de Litio", 150, 10, true),
+            new ProductoEspacial("Raciones de Plasma", 45, 25, true),
+            new ProductoEspacial("Combustible Antimateria", 500, 3, false)
+        ];
+
+        // Función para renderizar los productos en la página HTML
+        function actualizarInterfaz() {
+            const contenedor = document.getElementById("contenedor-productos");
+            contenedor.innerHTML = ""; // Limpiar pantalla
+
+            // Bucle para recorrer el array y dibujar las tarjetas
+            for (let i = 0; i < inventario.length; i++) {
+                const prod = inventario[i];
+                contenedor.innerHTML += `
+                    <div class="card">
+                        <h3>${prod.nombre}</h3>
+                        <p><strong>Precio:</strong> ${prod.precio} 🪙</p>
+                        <p><strong>Stock:</strong> ${prod.stock} uds</p>
+                        <p><strong>Exportable:</strong> ${prod.exportable ? '✅ Sí' : '🚫 No'}</p>
+                    </div>
+                `;
+            }
+        }
+
+        // Función auxiliar para simular clics desde los botones
+        function simularVenta(nombreProducto, cantidad) {
+            const producto = inventario.find(p => p.nombre === nombreProducto);
+            if (producto) {
+                producto.vender(cantidad);
+            }
+        }
+
+        // Función para simular una consola de texto en la pantalla HTML
+        function imprimirEnConsola(mensaje) {
+            const consola = document.getElementById("consola-web");
+            consola.innerHTML += `> ${mensaje}<br>`;
+            consola.scrollTop = consola.scrollHeight; // Auto-scroll hacia abajo
+        }
+
+        // Inicializar la pantalla al cargar la página
+        actualizarInterfaz();
+    </script>
+</body>
+
+</html>
