@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Control - Tienda Intergaláctica</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+
+    <header>
+        <h1>🚀 Panel de Control Intergaláctico</h1>
+        <p>Prototipo Beta para el entrenamiento de Cadetes de Programación</p>
+    </header>
+
+    <main>
+        <!-- MÓDULO 1 y 3: Vista de Inventario -->
+        <div class="section">
+            <h2>📦 Inventario de la Nave (Clases y Arrays)</h2>
+            <div class="grid" id="contenedor-productos">
+                <!-- Los productos se cargarán dinámicamente con JavaScript -->
+            </div>
+        </div>
+
+        <!-- MÓDULO 2 y 4: Caja Registradora -->
+        <div class="section">
+            <h2>💳 Terminal de Simulación de Ventas (Condicionales y Funciones)</h2>
+            <p>Selecciona una acción rápida para probar los sistemas automáticos:</p>
+            <div class="grid">
+                <button class="btn" onclick="simularVenta('Cristales de Litio', 2)">Comprar 2 Cristales de
+                    Litio</button>
+                <button class="btn" onclick="simularVenta('Raciones de Plasma', 6)">Comprar 6 Raciones (¡Aplica
+                    Descuento!)</button>
+                <button class="btn" onclick="simularVenta('latas de atun', 1)">Comprar 1 lata</button>
+
+            </div>
+        </div>
+
+        <!-- Consola de Salida del Sistema -->
+        <div class="section">
+            <h2>🖥️ Bitácora del Sistema (Consola Web)</h2>
+            <div class="console-box" id="consola-web">
+                [SISTEMA ONLINE]: Esperando instrucciones de compra...<br>
+            </div>
+        </div>
+    </main>
+
+    <script src="./BD/infoBD.js"></script>
+</body>
+
+</html>
