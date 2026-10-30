@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfil de Usuario</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="container">
+    
+    <!-- HEADER (Cuadro Negro) -->
+    <header class="header-section">
+      
+      <!-- Top Nav -->
+      <div class="top-bar">
+        <button class="menu-btn" aria-label="Menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+        <a href="#" class="edit-link">Edit Profile</a>
+      </div>
+
+      <!-- User Profile Card -->
+      <div class="profile-card">
+        <div class="avatar-container">
+          <img src="image.png" alt="Sarah Parker" class="avatar">
+        </div>
+        <h1 class="user-name">Sarah Parker</h1>
+      </div>
+
+      <!-- User Metrics & Bio -->
+      <div class="user-stats-bio">
+        <div class="stats-row">
+          <div class="stat-item">
+            <span class="stat-number">150</span>
+            <span class="stat-label">Followers</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">98</span>
+            <span class="stat-label">Following</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">12</span>
+            <span class="stat-label">Completed</span>
+          </div>
+        </div>
+        <p class="bio">Lifelong learner exploring the world of knowledge.</p>
+      </div>
+
+    </header>
+
+    <!-- MAIN BODY (Cuadro Rojo) -->
+    <main class="main-section">
+      
+      <!-- Overall Progress -->
+      <div class="card progress-card">
+        <div class="card-header-row">
+          <span class="card-title">Overall Progress</span>
+          <span class="card-percentage">75%</span>
+        </div>
+        <div class="progress-bar-bg">
+          <div class="progress-bar-fill" style="width: 75%;"></div>
+        </div>
+      </div>
+
+      <!-- Active Learning Paths -->
+      <section class="learning-paths">
+        <h2 class="section-title">Active Learning Paths</h2>
+        
+        <div class="card path-card">
+          <div class="path-icon"></div>
+          <div class="path-info">
+            <div class="path-header">
+              <span class="path-title">Math Fundamentals</span>
+              <span class="path-percentage">50 %</span>
+            </div>
+            <div class="progress-bar-bg small">
+              <div class="progress-bar-fill" style="width: 50%;"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- FOOTER (Cuadro Amarillo) -->
+    <footer class="footer-section">
+      
+      <!-- Interests -->
+      <div class="interests-block">
+        <h3 class="subsection-title">Interests</h3>
+        <div class="tags-container">
+          <span class="tag">Artificial Intelligence</span>
+          <span class="tag">Data Science</span>
+          <span class="tag">Design</span>
+        </div>
+      </div>
+
+      <!-- Learning Statistics -->
+      <div class="learning-stats-block">
+        <h3 class="subsection-title">Learning Statistics</h3>
+        <div class="stats-grid">
+          <div class="stat-box">
+            <div class="stat-main"><span class="number">26</span> hours</div>
+            <span class="subtext">Hours learned Monday</span>
+          </div>
+          <div class="stat-box">
+            <div class="stat-main"><span class="number">45</span> days</div>
+            <span class="subtext">Learning streak</span>
+          </div>
+        </div>
+      </div>
+
+    </footer>
+
+  </div>
+
+</body>
+</html>
