@@ -3,10 +3,12 @@ const ctx = canvas.getContext("2d");
 
 // Variables de nuestro "Mario"
 let mario = { x: 50, y: 300, width: 30, height: 30, vy: 0, jumping: false };
+
+// Tarea: Varias plataformas
 let plataformas = [
-    { x: 300, y: 300, width: mario.width * 3, height: 8 },
-    { x: 300, y: 300, width: mario.width * 3, height: 8 },
-    { x: 300, y: 300, width: mario.width * 3, height: 8 }
+    { x: 260, y: 300, width: mario.width * 3, height: 8 },
+    { x: 380, y: 250, width: mario.width * 3, height: 8 },
+    { x: 500, y: 200, width: mario.width * 3, height: 8 }
 ];
 let gravity = 0.5;
 let keys = {};
@@ -17,14 +19,19 @@ let valorMoneda = 20;
 // Puntaje total acumulado por Mario
 let puntaje = 0;
 
-// Contador disminuye
-let contador = 0;
+//Tarea: El mensajito pa la victoria
+let juegoGanado = false;
+
+// Tarea: Contador disminuye recogiendo monedas
+let contador = 5;
 
 // Moneda y texto que aparece al recogerla
 let monedas = [
+    { x: 120, y: 340, radius: 12, visible: true },
     { x: 220, y: 340, radius: 12, visible: true },
-    { x: 345, y: 265, radius: 12, visible: true },
-    { x: 480, y: 340, radius: 12, visible: true }
+    { x: 310, y: 265, radius: 12, visible: true },
+    { x: 425, y: 215, radius: 12, visible: true },
+    { x: 545, y: 165, radius: 12, visible: true }
 ];
 
 // Texto que sale al recoger la moneda
@@ -52,8 +59,9 @@ function update() {
     mario.vy += gravity;
     mario.y += mario.vy;
 
+    let sobreSuperficie = false;
+
     for (let plataforma of plataformas) {
-        let sobreSuperficie = false;
 
         // La plataforma solo detiene a Mario cuando está cayendo sobre ella
         let coincideHorizontalmente =
@@ -98,12 +106,18 @@ function update() {
             if (distanciaX * distanciaX + distanciaY * distanciaY <= moneda.radius * moneda.radius) {
                 moneda.visible = false;
                 puntaje += valorMoneda;
+                contador--;
                 textosPuntos.push({
                     x: moneda.x,
                     y: moneda.y,
                     valor: valorMoneda,
                     tiempo: 60
                 });
+
+                //Tarea: Esto activa el mensaje de victoria
+                if (contador == 0){
+                    juegoGanado = true;
+                }
             }
         }
     }
@@ -126,8 +140,10 @@ function draw() {
     ctx.fillRect(0, 380, canvas.width, 20);
 
     // Dibujar la plataforma con un ancho igual a tres veces el de Mario
-    ctx.fillStyle = "#8b5a2b";
-    ctx.fillRect(plataforma.x, plataforma.y, plataforma.width, plataforma.height);
+    for (let plataforma of plataformas) {
+        ctx.fillStyle = "#8b5a2b";
+        ctx.fillRect(plataforma.x, plataforma.y, plataforma.width, plataforma.height);
+    }
 
     // Dibujar a Mario (un bloque rojo temporal)
     ctx.fillStyle = "red";
@@ -158,6 +174,14 @@ function draw() {
     ctx.font = "bold 20px Arial";
     ctx.textAlign = "left";
     ctx.fillText("Puntaje: " + puntaje, 15, 30);
+    ctx.fillStyle = "#222222";
+
+    // Mostrar el contador de monedas
+    ctx.fillStyle = "#222222";
+    ctx.font = "bold 20px Arial";
+    ctx.textAlign = "left";
+    ctx.fillText("Monedas: " + contador, 15, 60);
+    ctx.fillStyle = "#222222";
 
     // Mostrar el resultado final al alcanzar la meta
     if (juegoGanado) {
